@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Open Sans", Arial, Helvetica, sans-serif;
+
+  /* AccessIT Brand Colors */
+  --color-brand-blue: #0072ae;
+  --color-brand-orange: #ff7a33;
+  --color-brand-orange-dark: #c74600;
+  --color-brand-navy: #003b5c;
+
+  /* Neutrals */
+  --color-text-body: #4d4d4d;
+  --color-text-dark: #363636;
+  --color-gray-light: #f1f1f1;
+  --color-gray-mid: #e0e0e0;
+
+  --color-background: #ffffff;
+  --color-foreground: #363636;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove dark mode override */
