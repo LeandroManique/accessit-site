@@ -14,8 +14,8 @@ const solucoes = [
     titulo: "Planejamento e Estratégia em TI",
     texto:
       "O Planejamento e Estratégia em TI da AccessIT é a etapa fundamental para garantir que nossas soluções sejam alinhadas aos objetivos da sua empresa. Antes de qualquer implementação, realizamos uma análise detalhada das suas necessidades, criando soluções personalizadas e estratégicas. Essa abordagem garante que nossas ações sejam sempre focadas em resultados concretos, otimizando a eficiência e o crescimento do seu negócio.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Estratégia e planejamento de TI com dados e análises",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Análise de dados e planejamento estratégico de TI",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
@@ -27,7 +27,7 @@ const solucoes = [
     texto:
       "Na AccessIT, você encontra uma linha completa de equipamentos de TI das melhores marcas como Dell, HP e Cisco, entre outras. Oferecemos servidores, storages, workstations, redes, notebooks e PCs de alta performance, com precisão econômica e suporte especializado. Nossa missão é garantir que cada equipamento atenda exatamente às necessidades do seu projeto, impulsionando o desempenho do seu negócio com soluções sob medida e custo-benefício ideal.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Servidores e infraestrutura de TI de alta performance",
+    imageAlt: "Rack de servidores de alta performance Dell, HP e Cisco",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" />
@@ -38,8 +38,8 @@ const solucoes = [
     titulo: "Importação de Tecnologias",
     texto:
       "Na AccessIT, trazemos ao seu negócio as mais avançadas soluções globais com nosso serviço de Importação de Tecnologia. Realizamos a importação de equipamentos e tecnologias específicas sob demanda, garantindo acesso a inovações exclusivas e alinhadas às suas necessidades. Com precisão logística e compromisso com cada etapa do processo, oferecemos soluções sob medida para impulsionar a eficiência e competitividade do seu projeto.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Importação e logística global de tecnologias",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Conectividade global e importação de tecnologias",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -62,8 +62,8 @@ const solucoes = [
     titulo: "Extensão de Garantia",
     texto:
       "Na AccessIT, nossa solução de Extensão de Garantia traz a tranquilidade que seu negócio precisa para focar no crescimento, sabendo que seus equipamentos estão protegidos. Com cobertura adicional para servidores, storages, notebooks, PCs e até equipamentos descontinuados, oferecemos suporte contínuo e especializado. Em parceria com as maiores marcas, garantimos que sua infraestrutura opere com desempenho máximo e sem preocupações, evitando custos imprevistos e prolongando a vida útil de seus ativos.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
-    imageAlt: "Suporte técnico especializado e extensão de garantia",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Infraestrutura tecnológica protegida com extensão de garantia",
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -109,8 +109,6 @@ export default function SolucoesPage() {
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
-                    {/* Subtle blue overlay on bottom */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0072ae]/30 to-transparent" />
                   </div>
                 </div>
 
