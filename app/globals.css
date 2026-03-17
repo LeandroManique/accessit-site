@@ -33,3 +33,37 @@ body {
 }
 
 /* Remove dark mode override */
+
+/* ── 21st.dev Effects ─────────────────────── */
+
+/* Animated grid background (hero) */
+@keyframes grid-drift {
+  to { transform: translate(40px, 40px); }
+}
+
+/* Marquee for partner logos */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-track:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+/* Scroll fade-in */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+/* ─────────────────────────────────────────── */

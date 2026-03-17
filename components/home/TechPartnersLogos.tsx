@@ -9,18 +9,29 @@ const partners = [
   { name: "VMware by Broadcom", logo: "/logos/partners/vmware.svg" },
 ];
 
+// Duplicated for seamless infinite loop
+const track = [...partners, ...partners];
+
 export default function TechPartnersLogos() {
   return (
-    <section className="py-12 bg-[#f1f1f1] border-y border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold text-[#4d4d4d] uppercase tracking-widest mb-8">
-          Parceiros Tecnológicos Oficiais
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
-          {partners.map((partner) => (
+    <section className="py-12 bg-[#f1f1f1] border-y border-gray-200 overflow-hidden">
+      <p className="text-center text-xs font-semibold text-[#4d4d4d] uppercase tracking-widest mb-8">
+        Parceiros Tecnológicos Oficiais
+      </p>
+
+      {/* Marquee track */}
+      <div className="animate-marquee-track relative">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to right, #f1f1f1, transparent)" }} />
+        <div className="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to left, #f1f1f1, transparent)" }} />
+
+        <div className="flex animate-marquee" style={{ width: "max-content" }}>
+          {track.map((partner, i) => (
             <div
-              key={partner.name}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+              key={`${partner.name}-${i}`}
+              className="flex items-center justify-center mx-10 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 flex-shrink-0"
               title={partner.name}
             >
               <Image
@@ -28,7 +39,7 @@ export default function TechPartnersLogos() {
                 alt={`Logo ${partner.name}`}
                 width={120}
                 height={50}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain max-w-[120px]"
               />
             </div>
           ))}

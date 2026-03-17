@@ -1,17 +1,31 @@
 import Link from "next/link";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 const WHATSAPP_URL = "https://wa.me/554891788492";
+
+const stats = [
+  { value: 10, suffix: "+", label: "Anos de mercado" },
+  { value: 15, suffix: "+", label: "Anos de experiência no setor" },
+  { value: 100, suffix: "%", label: "Foco em resultados" },
+  { value: 2, suffix: "", label: "Filiais: RS e SC" },
+];
 
 export default function Hero() {
   return (
     <section className="relative bg-[#0072ae] overflow-hidden">
-      {/* Background pattern */}
-      <div
-        className="absolute inset-0 opacity-10"
+      {/* Animated grid background */}
+      <div className="absolute inset-[-40px] opacity-[0.07] pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 50%, #ffffff 1px, transparent 1px), radial-gradient(circle at 80% 20%, #ffffff 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+          animation: "grid-drift 6s linear infinite",
+        }}
+      />
+
+      {/* Subtle radial glow center-right */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -19,6 +33,10 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-semibold uppercase tracking-widest mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff7a33] animate-pulse" />
+              Soluções em TI — Brasil
+            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
               PLANEJAMOS,{" "}
               <span className="text-[#ff7a33]">FORNECEMOS</span>{" "}
@@ -49,20 +67,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Stats / Info cards */}
+          {/* Animated Stats */}
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { number: "10+", label: "Anos de mercado" },
-              { number: "15+", label: "Anos de experiência no setor" },
-              { number: "100%", label: "Foco em resultados" },
-              { number: "2", label: "Filiais: RS e SC" },
-            ].map((stat) => (
+            {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center"
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/15 transition-colors duration-300"
               >
                 <div className="text-3xl font-extrabold text-[#ff7a33]">
-                  {stat.number}
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="mt-1 text-sm text-white/80">{stat.label}</div>
               </div>
