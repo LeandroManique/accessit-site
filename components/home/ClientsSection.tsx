@@ -21,15 +21,15 @@ export default function ClientsSection() {
           {clients.map((client) => (
             <div
               key={client.name}
-              className="bg-white rounded-xl px-6 py-4 shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-white rounded-2xl px-8 py-6 shadow-sm hover:shadow-lg transition-all duration-300"
               title={client.name}
             >
               <Image
                 src={client.logo}
                 alt={`Logo ${client.name}`}
-                width={140}
-                height={60}
-                className="h-12 w-auto object-contain"
+                width={120}
+                height={120}
+                className="w-28 h-28 object-contain"
               />
             </div>
           ))}

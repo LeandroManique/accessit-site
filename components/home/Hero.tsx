@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
+import ParticleNetwork from "@/components/home/ParticleNetwork";
 
 const WHATSAPP_URL = "https://wa.me/554891788492";
 
@@ -13,21 +14,8 @@ const stats = [
 export default function Hero() {
   return (
     <section className="relative bg-[#0072ae] overflow-hidden">
-      {/* Animated grid background */}
-      <div className="absolute inset-[-40px] opacity-[0.07] pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-          animation: "grid-drift 6s linear infinite",
-        }}
-      />
-
-      {/* Subtle radial glow center-right */}
-      <div className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,255,255,0.06) 0%, transparent 70%)",
-        }}
-      />
+      {/* Interactive particle network canvas */}
+      <ParticleNetwork />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
