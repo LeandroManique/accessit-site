@@ -33,7 +33,7 @@ export default function Footer() {
               alt="AccessIT"
               width={160}
               height={38}
-              className="h-9 w-auto"
+              className="h-9 w-auto max-w-[160px]"
             />
             <div className="flex gap-3 mt-2">
               <a

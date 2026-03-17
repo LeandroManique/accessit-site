@@ -12,29 +12,29 @@ const steps = [
     number: "01",
     title: "Primeiro Contato e Identificação",
     text: "O cliente nos apresenta sua necessidade ou problema, seja presencialmente ou por uma reunião online.",
-    image: "/images/atendimento/passo-1.jpg",
-    imageAlt: "Especialista AccessIT realizando o primeiro contato com o cliente",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Reunião de negócios — primeiro contato com o cliente",
   },
   {
     number: "02",
     title: "Análise Técnica",
     text: "Avaliamos a situação utilizando metodologias certificadas e ferramentas apropriadas para mapear as melhores soluções.",
-    image: "/images/atendimento/passo-2.jpg",
-    imageAlt: "Especialistas AccessIT realizando análise técnica de projeto de TI",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Análise técnica de dados e infraestrutura de TI",
   },
   {
     number: "03",
     title: "Solução Personalizada",
     text: "Desenvolvemos e apresentamos a solução ideal, incluindo orçamento detalhado e alinhado às necessidades do cliente.",
-    image: "/images/atendimento/passo-3.jpg",
-    imageAlt: "Especialista AccessIT apresentando soluções ao cliente",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Apresentação de solução personalizada ao cliente",
   },
   {
     number: "04",
     title: "Entrega e Implementação",
     text: "Realizamos a entrega personalizada e a implementação com suporte técnico completo para garantir o sucesso da solução.",
-    image: "/images/atendimento/passo-4.jpg",
-    imageAlt: "Técnicos AccessIT realizando entrega e implementação dos equipamentos",
+    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Técnico realizando implementação de infraestrutura de TI",
   },
 ];
 
@@ -87,35 +87,49 @@ export default function AtendimentoPage() {
       {/* Passos */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
+          <div className="space-y-24">
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                   index % 2 !== 0 ? "lg:grid-flow-col-dense" : ""
                 }`}
               >
                 {/* Image */}
-                <div className={`${index % 2 !== 0 ? "lg:col-start-2" : ""}`}>
-                  <div className="relative rounded-2xl overflow-hidden bg-[#f1f1f1] aspect-[4/3]">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <div className="text-6xl font-extrabold text-[#0072ae]/10">{step.number}</div>
-                        <p className="text-sm text-[#4d4d4d]/50 mt-2">{step.imageAlt}</p>
-                      </div>
+                <div className={index % 2 !== 0 ? "lg:col-start-2" : ""}>
+                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
+                    <Image
+                      src={step.image}
+                      alt={step.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    {/* Step number badge */}
+                    <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-[#ff7a33] flex items-center justify-center shadow-lg">
+                      <span className="text-white font-extrabold text-sm">{step.number}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Text */}
-                <div className={`${index % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-[#ff7a33] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      {step.number}
-                    </div>
-                    <h2 className="text-xl font-bold text-[#0072ae]">{step.title}</h2>
+                <div className={index % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0072ae]/10 text-[#0072ae] text-xs font-bold uppercase tracking-widest mb-5">
+                    Etapa {step.number}
                   </div>
-                  <p className="text-base text-[#4d4d4d] leading-relaxed">{step.text}</p>
+                  <h2 className="text-2xl font-extrabold text-[#003b5c] mb-4 leading-tight">
+                    {step.title}
+                  </h2>
+                  <p className="text-[#4d4d4d] leading-relaxed text-base">
+                    {step.text}
+                  </p>
+                  {/* Connector line (not on last step) */}
+                  {index < steps.length - 1 && (
+                    <div className="mt-8 flex items-center gap-3">
+                      <div className="w-8 h-0.5 bg-[#ff7a33]" />
+                      <span className="text-xs text-[#4d4d4d]/60">Próxima etapa</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

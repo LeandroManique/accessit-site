@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Stats / Info cards */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              { number: "8+", label: "Anos de mercado" },
+              { number: "10+", label: "Anos de mercado" },
               { number: "15+", label: "Anos de experiência no setor" },
               { number: "100%", label: "Foco em resultados" },
               { number: "2", label: "Filiais: RS e SC" },
